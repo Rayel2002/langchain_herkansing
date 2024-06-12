@@ -1,6 +1,7 @@
 import express from 'express';
-import { askGPT } from '../controller/promptcall.js'
-const router = express.Router()
+import { askGPT } from '../controller/promptcall.js';
+
+const router = express.Router();
 
 router.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -11,11 +12,11 @@ router.use((req, res, next) => {
 
 router.post('/', async (req, res) => {
     if (!req.body.message) {
-        res.status(400).send('Message is required')
+        res.status(400).send('Message is required');
     } else {
-        console.log(req.body.message)
-        res.send(await askGPT(req.body.message)).status(200)
+        console.log(req.body.message);
+        res.send(await askGPT(req.body.message)).status(200);
     }
-})
+});
 
-export { router }
+export { router };
