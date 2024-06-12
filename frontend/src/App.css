@@ -1,10 +1,14 @@
+/* Root Container */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f2ef; /* LinkedIn-like background */
 }
 
+/* Logo Styling */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -12,12 +16,13 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #2867B2); /* LinkedIn Blue */
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafb);
 }
 
+/* Logo Spin Animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +38,73 @@
   }
 }
 
+/* Card Styling */
 .card {
+  background-color: #ffffff; /* White background for cards */
   padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 1em 0;
+  text-align: left;
 }
 
+/* Read the Docs Link */
 .read-the-docs {
-  color: #888;
+  color: #606770; /* Muted text color */
+  font-size: 0.875rem; /* Slightly smaller font size */
+}
+
+/* Button Styling */
+.button {
+  background-color: #2867B2; /* LinkedIn Blue */
+  color: #ffffff; /* White text */
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.button:hover {
+  background-color: #004182; /* Darker blue on hover */
+}
+
+/* Input Styling */
+.input {
+  padding: 0.75em;
+  border: 1px solid #cccccc; /* Light grey border */
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+
+.input:focus {
+  border-color: #2867B2; /* Blue border on focus */
+  outline: none;
+}
+
+/* Header Styling */
+h1, h2, h3, h4, h5, h6 {
+  color: #2d2d2d; /* Dark grey for headers */
+  font-weight: 600;
+}
+
+/* Text Styling */
+p {
+  color: #484848; /* Medium grey for text */
+  line-height: 1.6;
+}
+
+/* Link Styling */
+a {
+  color: #2867B2; /* Blue links */
+  text-decoration: none;
+  transition: color 300ms;
+}
+
+a:hover {
+  color: #004182; /* Darker blue on hover */
 }
