@@ -15,7 +15,8 @@ router.post('/', async (req, res) => {
         res.status(400).send('Message is required');
     } else {
         console.log(req.body.message);
-        res.send(await askGPT(req.body.message)).status(200);
+        const response = await askGPT(req.body.message);
+        res.status(200).json(response);
     }
 });
 
