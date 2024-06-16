@@ -1,25 +1,23 @@
 import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
-import { router as gptRoute } from './routes/gpt.routes.js';
-import { initPinecone } from './utils/pinecone-connection.js';
+import { router as gptRoute } from './routes/gpt.routes.js'
 
-const app = express();
+const app = express()
 
-initPinecone();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  next();
-});
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 
-app.use('/chat', gptRoute);
+    next()
+})
+
+app.use('/chat', gptRoute)
 
 app.listen(process.env.PORT, () => {
-  console.log("Server started on port", process.env.PORT);
+  console.log("started");
 });
